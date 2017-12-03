@@ -387,7 +387,7 @@ module.exports = function FpsUtils(dispatch) {
         hiddenPlayers[event.gameId] = event;
 
         // Check the state or if the individual is hidden.
-        if (state === 3 || hiddenIndividual[event.guid]) {
+        if (state === 3 || hiddenIndividual[event.gameId]) {
             return false;
         }
 
