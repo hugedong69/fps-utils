@@ -3,7 +3,7 @@
     "db.json": "631f79ca2a018aa6165ed284f3f5b954e3b23d5b2835e80a9d9439f6a8bd6749",
     "index.js": "73110ffc43f0cfb326d21666f0867c7561d586f206579c859d86ceb945cd1843",
     "module.json": "cfeb11cee659e5bdbbef0332226edc4761ebd62f6f8a4b870652fa4cfeff7669",
-    "package.json": "6d41e903c6db29adb13141a750e35991fcf8cef9831f47da6f3e7b25ce2e8be3",
+    "package.json": "6d41e903c6db29adb13141a750e35991fcf8cef9831f47da6f3e7b25ce2e8be3"
   },
   "defs": {
     "S_SPAWN_USER": 11,
