@@ -4,7 +4,7 @@
     "index.js": "73110ffc43f0cfb326d21666f0867c7561d586f206579c859d86ceb945cd1843",
     "module.json": "cfeb11cee659e5bdbbef0332226edc4761ebd62f6f8a4b870652fa4cfeff7669",
     "package.json": "6d41e903c6db29adb13141a750e35991fcf8cef9831f47da6f3e7b25ce2e8be3",
-    "README.md": "9b07cd30d03f0bbeeda17d9abcfab512393edb00954b63f49812c72e9973f582"
+    "README.md": "b2e31b097605a84b68cd82c6321f5f6b3cecfc688afbeed438e144b26a4785b9"
   },
   "defs": {
     "S_SPAWN_USER": 11,
