@@ -69,11 +69,10 @@ const Command = require('command'),
 
 
 module.exports = function FpsUtils(dispatch) {
-     
-      try { //behold true cancer
-        db = require('./db.json')
-    } catch (e) {
-        console.log('(FPS Utils) - No DB file detected, creating...');
+
+	try {db = require('./db.json')} 
+	catch (e) {
+		console.log('(FPS Utils) - No DB file detected, creating...')
         db = {
             "version": 1,
             "classes":{
@@ -99,125 +98,65 @@ module.exports = function FpsUtils(dispatch) {
             "hiddensummon":[12345,1024001,1023405,10238007],
             "hiddeneffect":[10153040,10155130,31100],
             "hiddenheal":[10154031,700409,701606,701607]
-        };
-        saveDb();
+        }
+		saveDb()
     }
-    if (db.version !== 1){ // surely there is a less bad way to do this but whatever, this is just for future cases where I might need to shove something in config
-        console.log('(FPS Utils) - Outdated DB file detected, updating');
-             db = {
-                 "version": 1,
-                 "classes":{
-                     "ranged":[5,6,10],
-                     "dps":[1,3,4,5,6,9,10,12,13],
-                     "healers":[7,8],
-                     "tanks":[2,11],
-                     "warrior":[1],
-                     "lancer":[2],
-                     "slayer":[3],
-                     "berserker":[4],
-                     "sorcerer":[5],
-                     "archer":[6],
-                     "priest":[7],
-                     "mystic":[8],
-                     "reaper":[9],
-                     "gunner":[10],
-                     "brawler":[11],
-                     "ninja":[12],
-                     "valkyrie":[13]
-                 },
-                 "hiddenskill":[270900,21400,40330,40320,40300],
-                 "hiddensummon":[12345,1024001,1023405,10238007],
-                 "hiddeneffect":[10153040,10155130,31100],
-                 "hiddenheal":[10154031,700409,701606,701607]
-             };
-             saveDb();
-         }
-     //config
-              try { //behold true cancer
-        flags = require('./config.json');
-    } catch (e) {
-        console.log('(FPS Utils) - No config file detected, creating...');
-        flags = {
-	"version": 1,
-	"state": 1,
-	"hide": {
-		"tanks": false,
-		"dps": false,
-		"healers": false,
-		"ranged": false,
-		"warrior": false,
-		"lancer": false,
-		"slayer": false,
-		"berserker": false,
-		"sorcerer": false,
-		"archer": false,
-		"priest": false,
-		"reaper": false,
-		"gunner": false,
-		"ninja": false,
-		"valkyrie": false
-	},
-	"fireworks": false,
-	"hitme": false,
-	"damage": false,
-	"heal": false,
-	"hit": true,
-	"logo": false,
-	"tcremove": false,
-	"tc": true,
-	"tcp": true,
-	"blockSkill": true,
-	"blockUserSkill": false,
-	"blockSummon": true,
-	"blockUserSummon": false,
-	"blockEffect": true,
-	"hiddenPeople": []
-};
-        saveConfig();        
+    if (db.version !== 1){ 		//Remember to change version number for updates
+		console.log('[FPS Utils] Outdated DB file detected, updating...')
+        Object.assign(db,{})	//Replace {} with updating object.Eg {"version":1.1,"newKey":1,"newKey2":[1,2]}
+		db.hiddenskill.push()	//To Prevent replacing user customized array, Use pushes for array based Object values. This is just an example.
+        saveDb()
     }
-    if (flags.version !== 1){ // surely there is a less bad way to do this but whatever, this is just for future cases where I might need to shove something in config
-        console.log('(FPS Utils) - Outdated config file detected, updating');
+    //config
+    try {flags = require('./config.json')}
+	catch(e) {
+        console.log('(FPS Utils) - No config file detected, creating...')
         flags = {
-	"version": 1,
-	"state": 1,
-	"hide": {
-		"tanks": false,
-		"dps": false,
-		"healers": false,
-		"ranged": false,
-		"warrior": false,
-		"lancer": false,
-		"slayer": false,
-		"berserker": false,
-		"sorcerer": false,
-		"archer": false,
-		"priest": false,
-		"reaper": false,
-		"gunner": false,
-		"ninja": false,
-		"valkyrie": false
-	},
-	"fireworks": false,
-	"hitme": false,
-	"damage": false,
-	"heal": false,
-	"hit": true,
-	"logo": false,
-	"tcremove": false,
-	"tc": true,
-	"tcp": true,
-	"blockSkill": true,
-	"blockUserSkill": false,
-	"blockSummon": true,
-	"blockUserSummon": false,
-	"blockEffect": true,
-	"hiddenPeople": []
-};
-        saveConfig();
+			"version": 1,
+			"state": 1,
+			"hide": {
+				"tanks": false,
+				"dps": false,
+				"healers": false,
+				"ranged": false,
+				"warrior": false,
+				"lancer": false,
+				"slayer": false,
+				"berserker": false,
+				"sorcerer": false,
+				"archer": false,
+				"priest": false,
+				"reaper": false,
+				"gunner": false,
+				"ninja": false,
+				"valkyrie": false
+			},
+			"fireworks": false,
+			"hitme": false,
+			"damage": false,
+			"heal": false,
+			"hit": true,
+			"logo": false,
+			"tcremove": false,
+			"tc": true,
+			"tcp": true,
+			"blockSkill": true,
+			"blockUserSkill": false,
+			"blockSummon": true,
+			"blockUserSummon": false,
+			"blockEffect": true,
+			"hiddenPeople": []
+		}
+        saveConfig()
+    }
+    if (flags.version !== 1){		//Remember to change version number for updates (if new version is 1.1, change to 1.1!)
+        console.log('[FPS Utils] Outdated config file detected, updating...');
+        Object.assign(flags,{})		//Replace {} with updating object.Eg {"version":1.1,"newKey":true,"newKey2":false,"tcp":false}
+        saveConfig()
     }
     
     
-    // y did I do this
+
   let DEBUG = false,
 		player,
         pcid,
@@ -300,6 +239,7 @@ module.exports = function FpsUtils(dispatch) {
 					default:
 						command.message('Missing command arguments, "fps mode [0, 1, 2, 3]"')
 				}
+				flags.state = state
                 break
 				
 			case "save":
@@ -706,20 +646,21 @@ module.exports = function FpsUtils(dispatch) {
 	function getClass(m) {return (m % 100)}
 	
     function saveConfig() {
-		flags.state = state
-		fs.writeFile(path.join(__dirname,'config.json'), JSON.stringify(flags, null, "\t"), err => {
+		fs.writeFile(path.join(__dirname,'config.json'), JSON.stringify(flags,null,"\t"), err => {
 			if (err) console.log('(FPS Utils) Config file failed to overwrite. Use "fps save" command to save again.')
 			else
 				console.log('(FPS Utils) Config file saved!') // I am too lazy to unfuck this at the present moment
 		})
 	}
-         function saveDb() {
-		fs.writeFile(path.join(__dirname,'db.json'), JSON.stringify(db), err => {
+	
+    function saveDb() { //Idk how else you can simplify this formatting method 
+		fs.writeFile(path.join(__dirname,'db.json'), JSON.stringify(db, (k,v)=> {if(v instanceof Array) return JSON.stringify(v);return v} , "\t").replace(/\"\[/g, '[').replace(/\]\"/g,']'), err => { 
 			if (err) console.log('(FPS Utils) DB file failed to overwrite. Use "fps save" command to save again.')
 			else
 				console.log('(FPS Utils) DB file saved!') // I am too lazy to unfuck this at the present moment
 		})
 	}
+	
 	
 	function redisplay() {
 		for (let pl in hiddenPlayers) {
