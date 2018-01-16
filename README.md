@@ -13,8 +13,6 @@
 ### Note
 This **huge** update was 100% all done by [SerenTera](https://github.com/SerenTera) please go check their stuff out because it's way better than anything I've ever done.
 
-Updated ~~frequently~~ sometimes, you can automatically recieve updates if you use [Caali's proxy!](https://discord.gg/maqBmJV)
-
 ## How to use:
 * Setup tera-proxy pinkie just see [Caali's proxy!](https://discord.gg/maqBmJV) Or [Pinkie's proxy !]https://discord.gg/3zpEVTa
 
