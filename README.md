@@ -14,7 +14,7 @@
 This **huge** update was 100% all done by [SerenTera](https://github.com/SerenTera) please go check their stuff out because it's way better than anything I've ever done.
 
 ## How to use:
-* Setup tera-proxy pinkie just see [Caali's proxy!](https://discord.gg/maqBmJV) Or [Pinkie's proxy !]https://discord.gg/3zpEVTa
+* Setup tera-proxy pinkie just see [Caali's proxy!](https://discord.gg/maqBmJV) Or [Pinkie's proxy!](https://discord.gg/3zpEVTa)
 
 ***Note***:If youre using caali's Proxy fps utils will be autoupdated
 * put the script folder "fps-utils" into bin/node_modules
