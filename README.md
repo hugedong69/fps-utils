@@ -18,6 +18,7 @@ Updated ~~frequently~~ sometimes, you can automatically recieve updates if you u
 ## How to use:
 * Setup tera-proxy pinkie just see [Caali's proxy!](https://discord.gg/maqBmJV) Or [Pinkie's proxy !]https://discord.gg/3zpEVTa
 ***Note***:If youre using caali's Proxy fps utils will be autoupdated
+
 * put the script folder "fps-utils" into bin/node_modules
 * Log the game using the proxy.
 * Now you have access to fps-utils commands
