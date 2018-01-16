@@ -24,6 +24,7 @@ Updated ~~frequently~~ sometimes, you can automatically recieve updates if you u
 
 ## Commands:
 ***Note:*** *When inputting commands directly from the **proxy channel**  the prefix `!` should be ignored.*
+
 Command | Argument(s) | Example | Description
 ---|---|---|---
 **!fps mode** | 1, 2, 3, off | !fps mode [state] | Sets the current fps-utils oprtimization state. 0 disables, 1 hides particles, 2 hides skill animations, 3 hides all players. Also turns fps hit on.
