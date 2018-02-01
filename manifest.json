@@ -1,9 +1,9 @@
 {
   "files": {
-    "index.js": "588ED983E4C1FC688904215327FFB9CE7BDC61A10352528D4925F11E4951FDC6",
-    "module.json": "cfeb11cee659e5bdbbef0332226edc4761ebd62f6f8a4b870652fa4cfeff7669",
-    "README.md": "7192A0398815D682F0905A44710A54DD35900D4C6FC2FB7FE6DE9EF69F25A522",
-    "package.json": "6d41e903c6db29adb13141a750e35991fcf8cef9831f47da6f3e7b25ce2e8be3"
+    "index.js": "c783620b300ba684a440e865728a0ec868f57090c7ba04e94cd0f65fb0af0a4e",
+    "module.json": "748dbb423540edbc71574369d2e93c0ab69504194cb0f5d6445aaf3062f04d4f",
+    "README.md": "da3fbb26027cebdd73c501ac5d6965c5cb56fa36b2ccc9f67d77de3281f40437",
+    "package.json": "da3fbb26027cebdd73c501ac5d6965c5cb56fa36b2ccc9f67d77de3281f40437"
   },
   "defs": {
     "S_SPAWN_USER": 11,
