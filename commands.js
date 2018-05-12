@@ -12,7 +12,7 @@ const {
   summons,
   fireworks,
   projectile,
-} = require("./fs/");
+} = require("./commands/");
 
 function fpsUtilsCommands(main = "", sub = "", arg = "") {
   let f;
