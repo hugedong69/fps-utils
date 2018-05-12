@@ -14,7 +14,7 @@ const {
   projectile,
 } = require("./fs/");
 
-function fpsUtilsfs(main = "", sub = "", arg = "") {
+function fpsUtilsCommands(main = "", sub = "", arg = "") {
   let f;
   switch (main.toLowerCase()) {
    case "mode":
@@ -68,4 +68,4 @@ function fpsUtilsfs(main = "", sub = "", arg = "") {
   f.call(this, sub, arg);
 }
 
-module.exports = fpsUtilsfs;
+module.exports = fpsUtilsCommands;
