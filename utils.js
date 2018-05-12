@@ -1,7 +1,7 @@
 "use strict";
 const { join } = require("path");
 const { writeFile, readFileSync } = require("fs");
-const { entries: objectEntries, assign } = Object;
+const { entries: objectEntries } = Object;
 const { isArray } = Array;
 
 const configPath = join(__dirname, "config.json");
@@ -35,15 +35,12 @@ const config = (() => {
 })();
 
 function saveConfig(conf = config) {
-  conf = assign({}, conf);
+  const copy = {};
   for (const [k, v] of objectEntries(conf)) {
-    if (!(v instanceof Set)) continue;
-    conf[k] = {
-      type: "Set",
-      data: [...v]
-    };
+    if (v instanceof Set) copy[k] = { type: "Set", data: [...v] };
+    else copy[k] = v;
   }
-  writeFile(configPath, JSON.stringify(conf, null, 4), noop);
+  writeFile(configPath, JSON.stringify(copy, null, 4), noop);
 }
 
 const longAsString = l => `${Number(l.unsigned)}:${l.low}:${l.high}`;

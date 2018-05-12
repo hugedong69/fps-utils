@@ -1,16 +1,16 @@
 "use strict";
-const { longAsString } = require("./utils");
 
 function hidePlayer(name) {
   const { spawnedPlayers, dispatch, hiddenUsers } = this;
 
-  for (const player of spawnedPlayers.values()) {
+  for (const [id, player] of spawnedPlayers) {
     if (player.name !== name) continue;
     dispatch.toClient("S_DESPAWN_USER", 3, {
       gameId: player.gameId,
       type: 1
     });
-    hiddenUsers.set(longAsString(player.gameId), player);
+    hiddenUsers.set(id, player);
+    return;
   }
 }
 
@@ -28,12 +28,12 @@ function showPlayer(name) {
 function hideAll() {
   const { spawnedPlayers, dispatch, hiddenUsers } = this;
 
-  for (const player of spawnedPlayers.values()) {
+  for (const [id, player] of spawnedPlayers) {
     dispatch.toClient("S_DESPAWN_USER", 3, {
       gameId: player.gameId,
       type: 1
     });
-    hiddenUsers.set(longAsString(player.gameId), player);
+    hiddenUsers.set(id, player);
   }
 }
 
@@ -49,13 +49,13 @@ function showAll() {
 function hideClass(model) {
   const { spawnedPlayers, dispatch, hiddenUsers } = this;
 
-  for (const player of spawnedPlayers.values()) {
+  for (const [id, player] of spawnedPlayers) {
     if (player.templateId % 100 !== model) continue;
     dispatch.toClient("S_DESPAWN_USER", 3, {
       gameId: player.gameId,
       type: 1
     });
-    hiddenUsers.set(longAsString(player.gameId), player);
+    hiddenUsers.set(id, player);
   }
 }
 
@@ -66,7 +66,6 @@ function showClass(model) {
     if (user.templateId % 100 !== model) continue;
     dispatch.toClient("S_SPAWN_USER", 13, user);
     hiddenUsers.delete(id);
-    return;
   }
 }
 

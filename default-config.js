@@ -17,12 +17,9 @@ module.exports = {
   hitOther: false,
   hitDamage: false,
   showStyle: false,
-  blacklistedNames: {
-    type: "Set",
-    data: [
-      "hugedong",
-    ]
-  },
+  blacklistedNames: new Set([
+    "hugedong",
+  ]),
   hiddenNpcs: [
     {
       zone: 1,
@@ -33,26 +30,13 @@ module.exports = {
       tempalteId: 2
     },
   ],
-  classNames: {
-    type: "Set",
-    data: ["warrior", "lancer", "slayer", "berserker", "sorcerer", "archer", "priest", "mystic", "reaper", "gunner", "brawler", "ninja", "valkyrie"]
-  },
-  roleNames: {
-    type: "Set",
-    data: ["dps", "healer", "tank", "ranged"]
-  },
-  hiddenClasses: {
-    type: "Set",
-    data: []
-  },
-  hiddenRoles: {
-    type: "Set",
-    data: []
-  },
+  classNames:  new Set(["warrior", "lancer", "slayer", "berserker", "sorcerer", "archer", "priest", "mystic", "reaper", "gunner", "brawler", "ninja", "valkyrie"]),
+  roleNames:  new Set(["dps", "healer", "tank", "ranged"]),
+  hiddenClasses:  new Set,
+  hiddenRoles:  new Set,
   classes: {
     1: {
       name: "warrior",
-      model: 1,
       blockedSkills: [],
       blockingSkills: false,
       role: ["dps"],
@@ -60,7 +44,6 @@ module.exports = {
     },
     2: {
       name: "lancer",
-      model: 2,
       blockedSkills: [],
       blockingSkills: false,
       role: ["tank"],
@@ -68,7 +51,6 @@ module.exports = {
     },
     3: {
       name: "slayer",
-      model: 3,
       blockedSkills: [],
       blockingSkills: false,
       role: ["dps"],
@@ -76,7 +58,6 @@ module.exports = {
     },
     4: {
       name: "berserker",
-      model: 4,
       blockedSkills: [],
       blockingSkills: false,
       role: ["dps"],
@@ -84,7 +65,6 @@ module.exports = {
     },
     5: {
       name: "sorcerer",
-      model: 5,
       blockedSkills: [],
       blockingSkills: false,
       role: ["dps", "ranged"],
@@ -92,7 +72,6 @@ module.exports = {
     },
     6: {
       name: "archer",
-      model: 6,
       blockedSkills: [],
       blockingSkills: false,
       role: ["dps", "ranged"],
@@ -100,7 +79,6 @@ module.exports = {
     },
     7: {
       name: "priest",
-      model: 7,
       blockedSkills: [],
       blockingSkills: false,
       role: ["healer"],
@@ -108,7 +86,6 @@ module.exports = {
     },
     8: {
       name: "mystic",
-      model: 8,
       blockedSkills: [],
       blockingSkills: false,
       role: ["healer"],
@@ -116,7 +93,6 @@ module.exports = {
     },
     9: {
       name: "reaper",
-      model: 9,
       blockedSkills: [],
       blockingSkills: false,
       role: ["dps"],
@@ -124,7 +100,6 @@ module.exports = {
     },
     10: {
       name: "gunner",
-      model: 10,
       blockedSkills: [],
       blockingSkills: false,
       role: ["dps", "ranged"],
@@ -132,7 +107,6 @@ module.exports = {
     },
     11: {
       name: "brawler",
-      model: 11,
       blockedSkills: [],
       blockingSkills: false,
       role: ["tank"],
@@ -140,7 +114,6 @@ module.exports = {
     },
     12: {
       name: "ninja",
-      model: 12,
       blockedSkills: [],
       blockingSkills: false,
       role: ["dps"],
@@ -148,7 +121,6 @@ module.exports = {
     },
     13: {
       name: "valkyrie",
-      model: 13,
       blockedSkills: [],
       blockingSkills: false,
       role: ["dps"],
