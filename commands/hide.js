@@ -16,10 +16,11 @@ function hide(sub, arg) {
     config.hiddenClasses.add(arg);
     for (const [model, classObj] of objectEntries(config.classes)) {
       if (classObj.name !== arg) continue;
+      classObj.isHidden = true;
       this.emit("hideclass", model);
-      this.message(`Class "${arg}" hidden`);
       break;
     }
+    this.message(`Class "${arg}" hidden`);
     break;
 
    case "role":
@@ -31,6 +32,7 @@ function hide(sub, arg) {
     for (const [model, classObj] of objectEntries(config.classes)) {
       if (!classObj.role.includes(arg)) continue;
       config.hiddenClasses.add(classObj.name);
+      classObj.isHidden = true;
       this.emit("hideclass", model);
     }
     this.message(`Role "${arg}" hidden`);

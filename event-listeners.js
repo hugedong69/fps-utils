@@ -4,7 +4,8 @@ function hidePlayer(name) {
   const { spawnedPlayers, dispatch, hiddenUsers } = this;
 
   for (const [id, player] of spawnedPlayers) {
-    if (player.name !== name) continue;
+    if (player.name.toLowerCase() !== name) continue;
+    if (hiddenUsers.has(id)) return;
     dispatch.toClient("S_DESPAWN_USER", 3, {
       gameId: player.gameId,
       type: 1
@@ -18,7 +19,7 @@ function showPlayer(name) {
   const { dispatch, hiddenUsers } = this;
 
   for (const [id, user] of hiddenUsers) {
-    if (user.name !== name) continue;
+    if (user.name.toLowerCase() !== name) continue;
     dispatch.toClient("S_SPAWN_USER", 13, user);
     hiddenUsers.delete(id);
     return;
@@ -50,7 +51,10 @@ function hideClass(model) {
   const { spawnedPlayers, dispatch, hiddenUsers } = this;
 
   for (const [id, player] of spawnedPlayers) {
-    if (player.templateId % 100 !== model) continue;
+    if (
+      player.templateId % 100 !== model ||
+      hiddenUsers.has(id)
+    ) continue;
     dispatch.toClient("S_DESPAWN_USER", 3, {
       gameId: player.gameId,
       type: 1
@@ -63,7 +67,10 @@ function showClass(model) {
   const { dispatch, hiddenUsers } = this;
 
   for (const [id, user] of hiddenUsers) {
-    if (user.templateId % 100 !== model) continue;
+    if (
+      user.templateId % 100 !== model &&
+      !hiddenUsers.has(id)
+    ) continue;
     dispatch.toClient("S_SPAWN_USER", 13, user);
     hiddenUsers.delete(id);
   }

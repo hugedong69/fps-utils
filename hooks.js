@@ -9,18 +9,6 @@ function onLogin({ gameId }) {
   dataMap.get(this).myId = gameId;
 }
 
-function onSpawnUser(event) {
-  dataMap.get(this).spawnedPlayers.set(longAsString(event.gameId), event);
-
-  if (
-    config.mode === 3 ||
-    config.blacklistedNames.has(event.name) ||
-    config.classes[event.templateId % 100].isHidden
-  ) {
-    return false;
-  }
-}
-
 function checkStyle(event) {
   if (!config.showStyle) return;
   event.weaponEnchant =
@@ -33,6 +21,21 @@ function checkStyle(event) {
   event.weapon = 0;
   event.showStyle = false;
   return true;
+}
+
+function onSpawnUser(event) {
+  const self = dataMap.get(this);
+  const id = longAsString(event.gameId);
+  self.spawnedPlayers.set(id, event);
+
+  if (
+    config.mode === 3 ||
+    config.blacklistedNames.has(event.name.toLowerCase()) ||
+    config.classes[event.templateId % 100].isHidden
+  ) {
+    self.hiddenUsers.set(id, event);
+    return false;
+  }
 }
 
 function onDespawnUser(event) {
@@ -88,7 +91,7 @@ function onSpawnNpc(event) {
 }
 
 function onDespawnNpc(event) {
-  dataMap.get(this).hiddenUsers.delete(longAsString(event.gameId));
+  dataMap.get(this).hiddenNpcs.delete(longAsString(event.gameId));
 }
 
 function onSkillResult(event) {
