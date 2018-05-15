@@ -1,23 +1,45 @@
 {
-   "files":{
-      "index.js":"D93E34E28CA700AC5A3C94619BD8A45E1E852651905347942ECBE7511354103A",
-      "module.json":"7F69B7C7D353C673646FBFF5C570323E25318FEC42671B4C192A2723EDB0264C",
-	  "README.md":"CA709079BFAE1A88CC5B3559FE4708D6DB6D3786A0A18BD124616FD63D519B0C"
-   },
-   "defs":{
-      "S_SPAWN_USER":13,
-      "S_DESPAWN_USER":3,
-      "S_USER_EXTERNAL_CHANGE":6,
-      "S_LOGIN":10,
-      "S_EACH_SKILL_RESULT":6,
-      "S_ABNORMALITY_BEGIN":2,
-      "S_USER_LOCATION":3,
-      "S_ACTION_STAGE":4,
-      "S_START_USER_PROJECTILE":5,
-      "S_SPAWN_PROJECTILE":3,
-      "S_FEARMOVE_STAGE":1,
-      "S_FEARMOVE_END":1,
-      "S_SPAWN_NPC":6,
-      "S_DESPAWN_NPC":3
-   }
+  "files": {
+    "index.js": "8d26702d5a38e0552c007a38cbfee4d357e71089f0707d202da2263858ac7e05",
+    "module.json": "786b7544e069669ccf3a7a963eba57f23b680ec1d7324b9c32de31202add20e9",
+    "README.md": "ca709079bfae1a88cc5b3559fe4708d6db6d3786a0a18bd124616fd63d519b0c",
+    "event-listeners.js": "da398196eec72ac64e6001d0ab740f835f8e481e186c382e0e45b25b08b223d4",
+    "default-config.js": "c9f88b41995831de030e8d5a13991ed0c5b9e8ea3478c6a2787bdc11f2c54624",
+    "utils.js": "f094177a8189f45bb268fd252b0a1d9ef809db245e27db664f0670fde53bf5a7",
+    "commands.js": "0193e3942d87c29a42a1ad8842b83435b61745fce6f18418ff1a25211c8d0ca0",
+    "hooks.js": "35998b57ef595a606cde472c4eb4d9d0596d53f7ccec843e75e2ad77010be3f0",
+    "commands/effects.js": "ae0a2ef426c9a56e91f1733541776ca60d9351121221cfa92e9707231f3e1f3b",
+    "commands/fireworks.js": "47c3f289e045a07e3569afc08185c3e65e342f9b90b4e474381b7664e4566b5e",
+    "commands/hide.js": "9856d5461637b158177380d2f0c703ef2511348d98c6326813c28260cbc7fd83",
+    "commands/hit.js": "f31344d786c6862f641f816f1b3c4f68eae3a449bf4e3905bfc26f88c898f727",
+    "commands/index.js": "6cc6c50fd2accd95c8bdad2bec3fc31ae66fce1e3382c9e2765e82d9d2ce442d",
+    "commands/list.js": "cc703cb032c2549a49527540663b9fb73d419598f5537ccc7c8924d5515d3d97",
+    "commands/mode.js": "67191dda0196cb5ae59249f54aa29f783a9d7d452a1c0cb66e5e1348e0c833e8",
+    "commands/npc.js": "da8335124d0a66b418f632103c75c18291f8139103195574df79a2d265dbaf75",
+    "commands/projectile.js": "b32f6a41d0e414e4c981e0a09ece03867dfbe26437202bdb30f0ee2ee1ffa736",
+    "commands/show.js": "69cdb3c71dd44075bcbcdbf41b1ae7b27b29048ed816c53727179f5328996de5",
+    "commands/skills.js": "5ebaec2bd8b1380e96a065790d9e28b66ae51deb437049e68cad66d2927673e8",
+    "commands/style.js": "d06330652b49148cb078fbd3b1ca37b5cd79efa3f574f66c4f28221231299ac4",
+    "commands/summons.js": "7ca266f136fd3c1e762537977231e7d4c63352ce578960db18772de3d3865cdb",
+    "config.json": "11836fee6aec439eeedcb4c45a6621c2ca1c70d6a95f6e6cf620bd987f936abe"
+  },
+  "defs": {
+    "S_SPAWN_USER": 13,
+    "S_DESPAWN_USER": 3,
+    "S_USER_EXTERNAL_CHANGE": 6,
+    "S_LOGIN": 10,
+    "S_EACH_SKILL_RESULT": 6,
+    "S_ABNORMALITY_BEGIN": 2,
+    "S_USER_LOCATION": 3,
+    "S_ACTION_STAGE": 4,
+    "S_START_USER_PROJECTILE": 5,
+    "S_SPAWN_PROJECTILE": 3,
+    "S_FEARMOVE_STAGE": 1,
+    "S_FEARMOVE_END": 1,
+    "S_SPAWN_NPC": 6,
+    "S_DESPAWN_NPC": 3,
+    "S_LOAD_TOPO": "raw",
+    "S_USER_MOVETYPE": "raw",
+    "S_ABNORMALITY_REFRESH": 1
+  }
 }
