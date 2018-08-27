@@ -21,7 +21,7 @@ module.exports = function FpsUtils2(dispatch) {
         config = {
             "version": "1.011",
             "mode": "0",
-            "hideFirewworks": false,
+            "hideFireworks": false,
             "hideAllAbnormies": false,
             "hideAllSummons": false,
             "blacklistNpcs": false,
@@ -349,8 +349,8 @@ module.exports = function FpsUtils2(dispatch) {
                 break
             case "fireworks":
             case "firework":
-                config.hideFirewworks = !config.hideFirewworks;
-                message(`Hiding of firework effects ${config.hideFirewworks ? 'en' : 'dis'}abled`);
+                config.hideFireworks = !config.hideFireworks;
+                message(`Hiding of firework effects ${config.hideFireworks ? 'en' : 'dis'}abled`);
                 break
             case "fpsbooster9001":
             case "effects":
@@ -473,7 +473,7 @@ module.exports = function FpsUtils2(dispatch) {
     }
 
     // ~~~* Hooks * ~~~
-    // note: for skills, do if classes[event.templateId].blockedSkills !== 
+    // note: for skills, do if classes[event.templateId].blockedSkills !==
 
     dispatch.hook('S_LOGIN', 10, (event) => {
         myId = event.gameId;
@@ -557,7 +557,7 @@ module.exports = function FpsUtils2(dispatch) {
                 }
             }
         }
-        if (config.fireworks && event.huntingZoneId === 1023 && (event.templateId === 60016000 || event.templateId === 80037000)) {
+        if (config.hideFireworks && event.huntingZoneId === 1023 && (event.templateId === 60016000 || event.templateId === 80037000)) {
             return false;
         }
     });

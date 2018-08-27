@@ -1,4 +1,5 @@
 {
-    "servers": ["https://raw.githubusercontent.com/codeagon/fps-utils/master/"],
-    "supportUrl": "https://discord.gg/maqBmJV"
+	"disableAutoUpdate": false,
+	"servers": ["https://raw.githubusercontent.com/codeagon/fps-utils/master/"],
+	"supportUrl": "https://discord.gg/maqBmJV"
 }
