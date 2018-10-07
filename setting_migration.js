@@ -6,6 +6,7 @@ const DefaultSettings = {
         "hideFireworks": false,
         "hideAllAbnormies": true,
         "hideAllSummons": false,
+		"keepMySummons" : true,
         "blacklistNpcs": false,
         "blacklistSkills": false,
         "blacklistAbnormies": false,
