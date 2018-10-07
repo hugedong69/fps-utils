@@ -400,8 +400,16 @@ module.exports = function FpsUtils2(mod) {
                 message(`Hidden roles: ${mod.settings.hiddenRoles}`);
                 break
             case "summons":
-                mod.settings.hideAllSummons = !mod.settings.hideAllSummons;
-                message(`Hiding of summoned NPCs ${mod.settings.hideAllSummons ? 'en' : 'dis'}abled`);
+			switch(arg){
+				case undefined:	
+					mod.settings.hideAllSummons = !mod.settings.hideAllSummons;
+					message(`Hiding of summoned NPCs ${mod.settings.hideAllSummons ? 'en' : 'dis'}abled`);
+				break;
+				case "mine":
+					mod.settings.keepMySummons = !mod.settings.keepMySummons;
+					message(`Hiding of owned summoned NPCs ${mod.settings.keepMySummons ? 'dis' : 'en'}abled`);
+				break;
+			}
                 break
             case "skills":
             case "skill":
@@ -691,6 +699,7 @@ module.exports = function FpsUtils2(mod) {
 
     mod.hook('S_SPAWN_NPC', 9, (event) => {
         if (mod.settings.hideAllSummons && event.huntingZoneId === 1023) {
+			if(mod.settings.keepMySummons && mod.game.me.is(event.owner)) return true;
             hiddenNpcs[event.gameId] = event; // apparently NPCs get feared and crash the client too
             return false;
         }
